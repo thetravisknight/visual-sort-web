@@ -1,6 +1,6 @@
 # Visualised Bubble Sorting Algorithm (Web)
 
-This website provides a visual representation of a bubble sorting algorithm using columns on a website.
+This website provides a visual representation of a bubble sorting algorithm using columns.
 
 Features:
 - Adjustable delay between each step in the sorting process
