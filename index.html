@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./script.js"></script>
+    <title>Sorting Algorithms</title>
+  </head>
+  <body onload="setNumberOfColumns()">
+    <header>
+      <div id="site_name">Sorting Algorithms</div>
+      <div class="field">
+        <label>Columns (<span id="columnCount"></span>)</label>
+        <div><input id="columnRange" min="1" max="100" value="50" step="1" type="range" oninput="setNumberOfColumns()" onchange="setNumberOfColumns()"></div>
+      </div>
+      <div class="field">
+        <label>Delay (<span id="delayTime">220ms</span>)</label>
+        <div><input id="delay" min="0" max="500" value="220" step="10" type="range" oninput="setDelay()" onchange="setDelay()"></div>
+      </div>
+      <div><input class="button" type="button" value="Reload Columns" onclick="resetColumns()" /></div>
+      <div>
+        <input id="bubble-sort-button" class="button" type="button" value="Bubble Sort" onclick="runSort('bubble')" />
+        <input id="cancel-button" class="button hidden" type="button" value="Stop" onclick="stopSort()" />
+      </div>
+    </header>
+    <div class="content">
+      <div id="columns_wrapper">
+
+      </div>
+    </div>
+    <div class="loop-modal">
+      <span id="loopIterations">0 loops</span>
+    </div>
+  </body>
+</html>
