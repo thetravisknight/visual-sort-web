@@ -2,25 +2,39 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="./script.js"></script>
     <title>Sorting Algorithms</title>
   </head>
   <body onload="setNumberOfColumns()">
     <header>
-      <div class="header-flex-item" id="site_name">Sorting Algorithms</div>
-      <div class="field header-flex-item">
-        <label>Columns (<span id="columnCount"></span>)</label>
-        <div><input id="columnRange" min="1" max="100" value="50" step="1" type="range" oninput="setNumberOfColumns()" onchange="setNumberOfColumns()"></div>
-      </div>
-      <div class="field header-flex-item">
-        <label>Delay (<span id="delayTime">220ms</span>)</label>
-        <div><input id="delay" min="0" max="500" value="220" step="10" type="range" oninput="setDelay()" onchange="setDelay()"></div>
-      </div>
-      <div class="header-flex-item"><input class="button" type="button" value="Reload Columns" onclick="resetColumns()" /></div>
-      <div class="header-flex-item">
-        <input id="bubble-sort-button" class="button" type="button" value="Bubble Sort" onclick="runSort('bubble')" />
-        <input id="cancel-button" class="button hidden" type="button" value="Stop" onclick="stopSort()" />
+      <div class="header-content">
+        <div class="header-flex-item" id="site_name">Sorting Algorithms</div>
+        <div class="field header-flex-item">
+          <label>Columns (<span id="columnCount"></span>)</label>
+          <div><input class="form-range"id="columnRange" min="1" max="100" value="20" step="1" type="range" oninput="setNumberOfColumns()" onchange="setNumberOfColumns()"></div>
+        </div>
+        <div class="field header-flex-item">
+          <label>Delay (<span id="delayTime">220ms</span>)</label>
+          <div><input class="form-range" id="delay" min="0" max="500" value="220" step="10" type="range" oninput="setDelay()" onchange="setDelay()"></div>
+        </div>
+        <div class="header-flex-item">
+          <input class="btn btn-secondary" type="button" value="Randomise" onclick="resetColumns()" />
+        </div>
+        <div class="header-flex-item">
+          <div class="dropdown" id="sort-button">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Choose Sort Method
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" id="bubblesort">Bubble Sort</a></li>
+              <li><button class="dropdown-item" id="selectionsort">Selection Sort</button></li>
+            </ul>
+          </div>
+          <input id="cancel-button" class="btn btn-danger hidden" type="button" value="Stop" onclick="stopSort()" />
+        </div>
       </div>
     </header>
     <div class="content">
